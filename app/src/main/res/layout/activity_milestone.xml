@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:scaleType="centerCrop">
+
+    <TextView
+        android:id="@+id/tvScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/milestone_screen_title"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:cropToPadding="true"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_keyboard_arrow_left_white_48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvScreenTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvScreenTitle" />
+
+    <View
+        android:id="@+id/milestoneBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/counterBackground"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintDimensionRatio="w,4:10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMilestoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/statLabelMargin"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/milestone_activity_name"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/milestoneBackground"
+        app:layout_constraintTop_toTopOf="@+id/milestoneBackground" />
+
+    <TextView
+        android:id="@+id/tvMilestoneProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/statLabelMargin"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/milestoneBackground"
+        app:layout_constraintTop_toTopOf="@+id/milestoneBackground" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMilestone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/statLabelMargin"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/milestoneBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMilestoneLabel" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <View
+        android:id="@+id/historyBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="37dp"
+        android:background="@color/counterBackground"
+        app:layout_constraintDimensionRatio="w,6:11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/statLabelMargin"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/historyBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAttemptLabel"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/tvHistoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/statLabelMargin"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/history_label"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/historyBackground"
+        app:layout_constraintTop_toTopOf="@+id/historyBackground" />
+
+    <TextView
+        android:id="@+id/tvAttemptLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/attempt_label"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="@dimen/stat_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvHistoryLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvHistoryLabel" />
+
+    <TextView
+        android:id="@+id/tvAttemptCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="sans-serif"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="@dimen/stat_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAttemptLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvAttemptLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvAttemptLabel" />
+
+    <TextView
+        android:id="@+id/tvBestStreakLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/best_streak_label"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="@dimen/stat_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvAttemptLabel"
+        app:layout_constraintEnd_toStartOf="@+id/tvBestStreakCount" />
+
+    <TextView
+        android:id="@+id/tvEmptyHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/empty_history"
+        android:textAllCaps="false"
+        android:textColor="@color/colorGrey"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/historyBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHistoryLabel" />
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/historyBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvHistoryLabel" />
+
+    <TextView
+        android:id="@+id/tvBestStreakCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/statLabelMargin"
+        android:fontFamily="sans-serif"
+        android:textAllCaps="false"
+        android:textColor="@color/statTitle"
+        android:textSize="@dimen/stat_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBestStreakLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvBestStreakLabel" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gHistoryStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tvBestStreakCount, tvBestStreakLabel, tvAttemptLabel, tvAttemptCount" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/milestoneAdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="@string/adMob_milestone_banner_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

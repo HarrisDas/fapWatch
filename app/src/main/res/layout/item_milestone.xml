@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/item_milestone_background"
+    android:paddingBottom="15dp"
+    android:paddingEnd="18dp"
+    android:paddingStart="18dp"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:id="@+id/item_milestone_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/stat_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/item_milestone_required_day_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_milestone_required_day_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/stat_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/item_milestone_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/item_milestone_title_tv" />
+
+    <ImageView
+        android:id="@+id/item_milestone_status_im"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_milestone_title_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

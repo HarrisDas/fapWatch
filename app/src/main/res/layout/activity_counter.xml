@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/containerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:scaleType="centerCrop">
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/home_title"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.012" />
+
+    <TextView
+        android:id="@+id/milestoneTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_corner_rectangle"
+        android:onClick="onMilestoneButtonClicked"
+        android:textAlignment="center"
+        android:textColor="@color/colorMilestoneTitle"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/counterBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <ImageButton
+        android:id="@+id/viewMilestoneButton"
+        android:layout_width="48dp"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:onClick="onMilestoneButtonClicked"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/milestone_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/app_name"
+        app:layout_constraintEnd_toStartOf="@+id/moreButton"
+        app:layout_constraintTop_toTopOf="@+id/app_name" />
+
+    <ImageButton
+        android:id="@+id/moreButton"
+        android:layout_width="48dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onMoreButtonClicked"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_more"
+        app:layout_constraintBottom_toBottomOf="@+id/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/app_name" />
+
+    <ImageView
+        android:id="@+id/counterBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toRightOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/counterTopText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/counter_text_top"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/counterDay"
+        app:layout_constraintEnd_toEndOf="@+id/counterBackground"
+        app:layout_constraintStart_toStartOf="@+id/counterBackground" />
+
+    <TextView
+        android:id="@+id/counterDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_day_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/counterBackground"
+        app:layout_constraintEnd_toStartOf="@+id/labelDay"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/counterBackground"
+        app:layout_constraintTop_toTopOf="@+id/counterBackground"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/labelDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/counter_text_bottom"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_day_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/counterDay"
+        app:layout_constraintEnd_toEndOf="@+id/counterBackground"
+        app:layout_constraintStart_toEndOf="@+id/counterDay" />
+
+    <TextView
+        android:id="@+id/counterHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_other_time_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/counterMinute"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/counterDay" />
+
+    <TextView
+        android:id="@+id/labelHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Hours"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_other_label_text"
+        app:layout_constraintEnd_toEndOf="@+id/counterHour"
+        app:layout_constraintStart_toStartOf="@+id/counterHour"
+        app:layout_constraintTop_toBottomOf="@+id/counterHour" />
+
+    <TextView
+        android:id="@+id/counterMinute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_other_time_text"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/counterHour"
+        app:layout_constraintEnd_toEndOf="@+id/counterBackground"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/counterBackground" />
+
+    <TextView
+        android:id="@+id/labelMinute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Minutes"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_other_label_text"
+        app:layout_constraintEnd_toEndOf="@+id/counterMinute"
+        app:layout_constraintStart_toStartOf="@+id/counterMinute"
+        app:layout_constraintTop_toBottomOf="@+id/counterMinute" />
+
+    <TextView
+        android:id="@+id/counterSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_other_time_text"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/counterHour"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/counterMinute" />
+
+    <TextView
+        android:id="@+id/labelSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Seconds"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="@dimen/counter_other_label_text"
+        app:layout_constraintEnd_toEndOf="@+id/counterSecond"
+        app:layout_constraintStart_toStartOf="@+id/counterSecond"
+        app:layout_constraintTop_toBottomOf="@+id/counterSecond" />
+
+    <TextView
+        android:id="@+id/counterStartPromptText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/counter_start_prompt"
+        android:textAlignment="center"
+        android:textColor="@color/colorCounterText"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/counterBackground"
+        app:layout_constraintLeft_toLeftOf="@+id/counterBackground"
+        app:layout_constraintRight_toRightOf="@+id/counterBackground"
+        app:layout_constraintTop_toTopOf="@+id/counterBackground" />
+
+    <ImageButton
+        android:id="@+id/startButton"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/start_button_background"
+        android:onClick="onStartButtonClicked"
+        android:scaleType="centerCrop"
+        android:src="@drawable/start_icon"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/counterBackground"
+        app:layout_constraintRight_toRightOf="@+id/counterBackground" />
+
+    <ImageButton
+        android:id="@+id/resetButton"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/reset_button_background"
+        android:onClick="onResetButtonClicked"
+        android:scaleType="centerCrop"
+        android:src="@drawable/reset_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/counterBackground"
+        app:layout_constraintRight_toRightOf="@+id/counterBackground" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <!--<com.google.android.gms.ads.AdView-->
+        <!--android:id="@+id/counterAdView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--app:adSize="BANNER"-->
+        <!--app:adUnitId="@string/adMob_home_banner_id"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/counterBackground"-->
+        <!--app:layout_constraintVertical_bias="0.7" />-->
+</android.support.constraint.ConstraintLayout>

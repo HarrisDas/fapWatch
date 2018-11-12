@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<plurals name="days">-->
+        <!--<item>day</item>-->
+        <!--<item>days</item>-->
+    <!--</plurals>-->
+    <!--<plurals name="default_reset">-->
+        <!--<item>You have reset the counter %1$d time</item>-->
+        <!--<item>You have reset the counter %1$d times</item>-->
+    <!--</plurals>-->
+    <!--<plurals name="hours">-->
+        <!--<item>hour</item>-->
+        <!--<item>hours</item>-->
+    <!--</plurals>-->
+    <!--<plurals name="minutes">-->
+        <!--<item>minute</item>-->
+        <!--<item>minutes</item>-->
+    <!--</plurals>-->
+    <!--<plurals name="seconds">-->
+        <!--<item>second</item>-->
+        <!--<item>seconds</item>-->
+    <!--</plurals>-->
+</resources>
